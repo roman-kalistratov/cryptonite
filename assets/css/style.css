@@ -1,0 +1,293 @@
+ul,
+li {
+    list-style: none;
+}
+
+.form-switch {
+    position: absolute;
+    right: 0;
+    bottom: 1em;
+}
+
+.form-switch .form-check-input {
+    width: 3rem;
+    padding: 11px;
+    background-color: inherit;
+    border-color: #BC8C3D;
+    cursor: pointer;
+}
+
+.form-switch .form-check-input:checked {
+    background-color: inherit;
+    border-color: #BC8C3D;
+}
+
+.percent-red {
+    color: red;
+}
+
+.percent-white {
+    color: white;
+}
+
+.bd-example {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.nav,
+.card-body,
+.pagination,
+.search-input {
+    position: relative;
+    z-index: 2;
+}
+
+.page-link::selection {
+    background-color: red !important;
+}
+
+#particles-js {
+    position: absolute;
+    height: 100vh;
+    z-index: 1;
+}
+
+.more-info li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.more-info li small {
+    font-size: 16px;
+    color: rgb(207, 180, 24);
+}
+
+.block-row {
+    padding: 1rem;
+}
+
+
+
+.block {
+    position: absolute;
+    width: 100%;
+    bottom: -10px;
+    left: 0;
+    overflow: hidden;
+}
+
+.block p {
+    text-align: center;
+    color: rgb(207, 180, 24);
+    animation: text 10s infinite linear;
+    padding-left: 100%;
+    font-weight: 200;
+    white-space: nowrap;
+    font-family: inherit;
+
+}
+
+@keyframes text {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-180%);
+    }
+}
+
+
+#icon-play {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2%;
+    z-index: 10;
+    cursor: pointer;
+}
+
+#icon-play svg path {
+    transition: all .2s linear;
+}
+
+#icon-play svg:hover path {
+    stroke: red;
+}
+
+.svg-red {
+    stroke: red;
+}
+
+select {
+    background-color: rgb(207, 180, 24) !important;
+    color: black !important;
+    transition: al .3s linear;
+}
+
+.coin-price {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-weight: 200;
+    font-size: 1rem;
+    color: rgb(207, 180, 24);
+}
+
+.card-body img {
+    width: 60px;
+}
+
+.report-img {
+    width: 40px !important;
+}
+
+
+
+@media only screen and (max-width: 1200px) {
+    .search-input {
+        display: flex;
+    }
+
+    .coin-price {
+        font-size: 1.4rem !important;
+    }
+
+    .card-body img {
+        width: 50px;
+    }
+
+    .card-body .btn {
+        padding: 0.4rem 1.3rem;
+    }
+
+    .collapse .card-body {
+        padding: 0.5rem 0.5rem;
+    }
+
+    .collapse .card-body ul {
+        padding: 0;
+        padding-bottom: 1rem;
+        font-size: 16px !important;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .iq-header-img {
+        height: 50% !important;
+    }
+}
+
+@media only screen and (max-width: 630px) {
+    .logo {
+        font-size: 25px !important;
+    }
+
+    .logo img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .page-link {
+        padding: 0.5rem 0.8rem !important;
+        font-size: 16px !important;
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    #chart-data .form-check {
+        padding: 0 !important;
+    }
+
+    #chart-data img {
+        width: 20px !important;
+    }
+
+    #chart-data label {
+        font-size: 10px !important;
+    }
+
+    #about-content,#about-data {
+        flex-direction: column !important;
+        align-items:center !important;
+        justify-content: center !important;
+        width: 100%;
+    }
+    #about-data h6 {
+        font-size: 14px;
+    }
+
+    
+}
+
+@media only screen and (max-width: 540px) {
+
+    .logo {
+        font-size: 18px !important;
+    }
+
+    .logo img {
+        width: 18px !important;
+        height: 18px !important;
+    }
+
+    .nav .nav-link {
+        padding: 0.2rem 0.5rem;
+        font-size: 12px;
+    }
+
+    .marquee {
+        padding-left: 8% !important;
+        font-size: 14px;
+    }
+
+    #icon-play {
+        left: 1%;
+    }
+
+    #icon-play svg {
+        width: 30px;
+    }
+
+    .page-link {
+        padding: 0.3rem 0.5rem !important;
+        font-size: 14px !important;
+    }
+}
+
+@media only screen and (max-width: 420px) {
+    .logo {
+        display: none;
+    }
+
+    .mlogo {
+        display: flex !important;
+        width: 25px;
+        height: 25px;
+        margin-right: 5px;
+    }
+
+    #card-reports h4 {
+        font-size: 16px;
+    }
+
+    #card-reports p {
+        font-size: 12px;
+    }
+
+    #chart-data div {
+        margin-right: 5px !important;
+    }
+
+    #chart-data img {
+        width: 15px !important;
+    }
+
+    #chart-data label {
+        font-size: 10px !important;
+    }
+}

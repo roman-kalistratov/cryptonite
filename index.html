@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Cryptonite</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" />
+    <link rel="stylesheet" href="assets/css/libs.min.css">
+    <link rel="stylesheet" href="assets/css/coinex.css?v=1.0.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <!-- particles Start -->
+    <div id="particles-js"></div>
+    <!-- particles END -->
+
+    <!-- loader Start -->
+    <div id="loading" style="display:block">
+        <div class="loader simple-loader">
+            <div class="loader-body"></div>
+        </div>
+    </div>
+    <!-- loader END -->
+
+    <!-- Modal -->
+    <div class="modal" id="modalHome" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="color:rgb(207, 180, 24)">Error selected
+                        items</h5>
+                </div>
+                <div class="modal-body">
+                    <span style="color:rgb(207, 180, 24)">You cannot select more than 5 cards.</span><br>
+                    To add the coin, you must unselect one of the selected coins.
+                    <div class="row cards-report">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal END-->
+
+    <!-- Modal -->
+    <div class="modal" id="modalReport" tabindex="-1" role="dialog" aria-labelledby="modalReport" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle" style="color:rgb(207, 180, 24)">Not enough data
+                        for graph</h5>
+                </div>
+                <div class="modal-body">
+                    <span style="color:rgb(207, 180, 24)"> Please select up 5 coins to display on the graph.</span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary " data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal END-->
+
+
+
+    <!-- Main -->
+    <main class="main-content">
+        <div class="position-relative">
+            <!--Nav Start-->
+            <div class="container-fluid content-inner pb-0">
+                <div class="bd-example">
+                    <div class="container-fluid navbar-inner">
+                        <nav class="nav navbar navbar-expand-lg navbar-light iq-navbar border-bottom">
+                            <div class="nav nav-tabs mb-3" id="nav-tab" role="tablist">
+                                <img class="mlogo" src="assets/images/logo.png"
+                                        alt="logo" style="display:none;">
+                                <a class="logo" style="font-size: 35px; margin-right: 1em;"><img src="assets/images/logo.png"
+                                        alt="logo" style="width: 50px; height:50px;">ryptonite</a>
+                                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                                    aria-selected="true">Home</button>
+                                <button class="nav-link" id="nav-report-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
+                                    aria-selected="false">Live
+                                    Reports</button>
+                                <button class="nav-link" id="nav-about-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
+                                    aria-selected="false">About</button>
+                            </div>
+                        </nav>
+
+
+                        <div class="tab-content" id="nav-tabContent">
+                            <!-- <========================== TAB 1 start ==========================> -->
+                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel"
+                                aria-labelledby="nav-home-tab">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="row align-items-center mb-4">   
+                                            <div class="col-12">
+                                                <div class="input-group search-input">
+                                                    <input id="input-search" type="search"
+                                                        class="form-control form-control-lg"
+                                                        placeholder="Search BTS/ETH">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row align-items-center mb-4" style="position: relative;">
+                                    <div class="col-1" id="icon-play">
+                                        <svg style="margin:auto" width="40" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12 2.5C17.2459 2.5 21.5 6.75315 21.5 12C21.5 17.2469 17.2459 21.5 12 21.5C6.75315 21.5 2.5 17.2469 2.5 12C2.5 6.75315 6.75315 2.5 12 2.5Z"
+                                                stroke="rgb(207, 180, 24)" stroke-width="1" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M15 11.9951C15 11.184 10.8425 8.58912 10.3709 9.0557C9.8993 9.52228 9.85395 14.424 10.3709 14.9346C10.8879 15.4469 15 12.8063 15 11.9951Z"
+                                                stroke="rgb(207, 180, 24)" stroke-width="1" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="col-xl-12 d-md-block">
+                                        <div class="card mb-0">
+                                            <div class="card-body block-row">
+                                                <!-- scroll news data -->
+                                                <div class="d-flex justify-content-between flex-wrap marquee"
+                                                    style="padding-left: 5%;">
+                                                    <marquee id='scroll_news' scrollamount="4" behavior="scroll"
+                                                        direction="left" loop="infinite"></marquee>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- <========================== Cards ==========================> -->
+                                <div class="bd-example" id="example">
+                                    <nav aria-label="Another pagination example">
+                                        <ul class="pagination pagination-lg flex-wrap">
+                                            <!-- .....  -->
+                                        </ul>
+                                    </nav>
+                                </div>
+                                <div class="load" style="width:50px; margin:auto; display: none;"><img
+                                        src="assets/images/load.gif" alt="load" style="width:50px;"></div>
+                                <div class="row" id="cards-filed"></div>
+                            </div>
+                            <!-- <========================== TAB 1 end ==========================> -->
+
+                            <!-- <========================== TAB 2 REPORTS ==========================> -->
+                            <div class="tab-pane fade-show" id="nav-profile" role="tabpanel"
+                                aria-labelledby="nav-report-tab">
+                                <div class="col-lg-12">
+                                    <div class="card" id="card-reports">
+                                        <div class="card-header d-flex justify-content-between flex-wrap">
+                                            <div class="header-title">
+                                                <h4 class="card-title mb-2">Real time reports</h4>
+                                                <p class="mb-0">Pictorial weekly analytics of market.</p>
+                                            </div>
+                                            <div class="d-flex align-items-center align-self-center">
+                                                <div class="d-flex align-items-center" id="chart-data">
+                                                    <!-- .....  -->
+                                                </div>    
+                                            </div>
+                                        </div>
+
+                                        <!-- chart start -->
+                                        <div class="card-body">
+                                            <div class="load" style="width:50px; margin:auto; display: none;"><img
+                                                    src="assets/images/load.gif" alt="load" style="width:50px;"></div>
+
+                                            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+                                        </div>
+                                        <!-- chart end -->
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <========================== TAB 2 end==========================> -->
+
+
+                            <!-- <========================== TAB 3 ABOUT ==========================> -->
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-about-tab">
+                                <div class="row">
+                                    <div class="col-lg-8">
+                                        <div class="card">
+                                            <div class="iq-header-img bg-soft-secondary" style="height: 576px;">
+                                                <img src="assets/images/pages/02-page.png" alt="header"
+                                                    class="img-fluid w-100 h-100" style="object-fit: contain;">
+                                            </div>
+                                            <div class="card-body mt-n6">
+                                                <div class="d-flex align-items-center justify-content-between">
+                                                    <div class="d-flex flex-wrap align-items-center" id="about-content">
+                                                        <div class="profile-img position-relative me-3 mb-3 mb-lg-0">
+                                                            <img src="assets/images/avatars/01.png"
+                                                                class="img-fluid avatar avatar-100 avatar-rounded"
+                                                                alt="profile-image">
+                                                        </div>
+                                                        <div class="d-flex align-items-center mb-3 mb-sm-0" id="about-data">
+                                                            <div>
+                                                                <h6 class="me-2 text-warning">Roman RK</h6>
+                                                                <p>Junior Full Stack Developer</p>
+                                                            </div>
+                                                            <div class="ms-3">
+                                                                <h6 class="me-2">roman.kalistrarov.rk@gmail.com</h6>
+                                                                <p>Email</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4">
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <div class="header-title">
+                                                            <h4 class="card-title text-primary">About</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <p>In this project a single page that accesses information
+                                                            and
+                                                            reports from
+                                                            the world of virtual commerce.</p>
+                                                        <p class="text-primary">Website includes:</p>
+                                                        <div class="mb-1">- the ability to track the value of coins
+                                                        </div>
+                                                        <div class="mb-1">- the ability to track coins on the chart
+                                                        </div>
+                                                        <div class="mb-1">- search for coins on the site</div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <div class="header-title">
+                                                            <h4 class="card-title text-primary">This projected was
+                                                                created using :</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-lg-4">
+                                                            <div class="card-body">
+                                                                <div class="mb-1">HTML</div>
+                                                                <div class="mb-1">CSS</div>
+                                                                <div class="mb-1">Bootstrap</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4">
+                                                            <div class="card-body">
+                                                                <div class="mb-1">JavaScript</div>
+                                                                <div class="mb-1">jQuery</div>
+                                                                <div class="mb-1">Canvas JS</div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="col-lg-4">
+                                                            <div class="card-body">
+                                                                <div class="mb-1">Ajax(REST API)</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="card">
+                                                    <div class="card-header">
+                                                        <div class="header-title">
+                                                            <h4 class="card-title text-primary">Started</h4>
+                                                        </div>
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <p>To get started, you can select up to 5 coins to diplay in
+                                                            the
+                                                            live report.
+                                                        </p>
+                                                        <p>If you would like to choose a sixth, you'll have to
+                                                            replace
+                                                            one of your
+                                                            currently selected coins with a new one.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <========================== TAB 3 end ==========================> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Main END-->
+
+
+
+    <!-- Backend Bundle JavaScript -->
+    <script src="assets/js/libs.min.js"></script>
+    <!-- particles -->
+    <script src="assets/js/particles.min.js"></script>
+    <!-- particles config -->
+    <script src="assets/js/part_config.js"></script>
+    <!-- MAIN JS -->
+    <script src="assets/js/main.js"></script>
+    <!-- APP JS -->
+    <script src="assets/js/app.js"></script>
+    <!-- chart JS -->
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="assets/js/chart.js"></script>
+</body>
+
+</html>
