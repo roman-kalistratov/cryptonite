@@ -1,7 +1,7 @@
 <h1 align="center"><img src="/assets/images/logo.png?raw=true" width="40">ryptonite </h1>
 <p align="center"> The Single Page Application only contains calls to various APIs. <br>
 All information is stored on the client side<br>
-<a href="roman-kalistratov.github.io/cryptonite/" target="_blank">Link to demo</a></p>
+<a href="roman-kalistratov.github.io/cryptonite" target="_blank">Link to demo</a></p>
 <h2 align="center">In this project  I used:</h2>
 
 <table align="center">
